@@ -235,6 +235,17 @@ def ex10():
         "5, 3424, 11.34, False",
     ]
 
+    inv_list = []
     for ele in data:
-        inv = Invoice(*ele.split(", "))
-        print(inv)
+        #inv = Invoice(*ele.split(", "))
+        #print(inv)
+        invoice_item = ele.split(", ")
+        i_id = invoice_item[0]
+        u_id = invoice_item[1]
+        amount = invoice_item[2]
+        is_paid = invoice_item[3]
+        inv = Invoice(i_id,u_id, amount, is_paid)
+        inv_list.append(inv)
+
+    print(inv_list)
+    
